@@ -1,0 +1,30 @@
+{
+    "dt": 1478131200,
+    "main": {
+        "temp": 0.39,
+        "temp_min": -0.4,
+        "temp_max": 0.39,
+        "pressure": 1030.7,
+        "sea_level": 1038.63,
+        "grnd_level": 1030.7,
+        "humidity": 89,
+        "temp_kf": 0.79
+    },
+    "weather": [{
+                "id": 800,
+                "main": "Clear",
+                "description": "clear sky",
+                "icon": "01n"
+                }],
+    "clouds": {
+        "all": 0
+    },
+    "wind": {
+        "speed": 1.65,
+        "deg": 283
+    },
+    "sys": {
+        "pod": "n"
+    },
+    "dt_txt": "2016-11-03 00:00:00"
+}

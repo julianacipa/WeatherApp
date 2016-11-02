@@ -26,4 +26,28 @@
     return self;
 }
 
+-(NSString *)readableWeatherDate {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *date  = [dateFormatter dateFromString:self.dateText];
+    
+    [dateFormatter setDateFormat:@"EEEE, dd MMM"];
+    
+    NSString *formattedDate = [dateFormatter stringFromDate:date];
+    
+    return formattedDate;
+}
+
+-(NSString *)readableWeatherTime {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *date  = [dateFormatter dateFromString:self.dateText];
+    
+    [dateFormatter setDateFormat:@"HH:mm"];
+    
+    NSString *formattedDate = [dateFormatter stringFromDate:date];
+    
+    return formattedDate;
+}
+
 @end

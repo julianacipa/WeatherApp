@@ -18,6 +18,8 @@
 		AF3216A61DCA954500A447E3 /* OWWeatherService.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3216A51DCA954500A447E3 /* OWWeatherService.m */; };
 		AF3216A91DCA96E900A447E3 /* OWWeatherItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3216A81DCA96E900A447E3 /* OWWeatherItem.m */; };
 		AFF0C28D1DCA9EE40096E14B /* OWWeatherServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF0C28C1DCA9EE40096E14B /* OWWeatherServiceTests.m */; };
+		AFF0C2901DCAACDB0096E14B /* OWWeatherItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF0C28F1DCAACDB0096E14B /* OWWeatherItemTests.m */; };
+		AFF0C2941DCAADE20096E14B /* OWWeatherItem.json in Resources */ = {isa = PBXBuildFile; fileRef = AFF0C2931DCAADE20096E14B /* OWWeatherItem.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		AF3216A71DCA96E900A447E3 /* OWWeatherItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWWeatherItem.h; sourceTree = "<group>"; };
 		AF3216A81DCA96E900A447E3 /* OWWeatherItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWWeatherItem.m; sourceTree = "<group>"; };
 		AFF0C28C1DCA9EE40096E14B /* OWWeatherServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWWeatherServiceTests.m; sourceTree = "<group>"; };
+		AFF0C28F1DCAACDB0096E14B /* OWWeatherItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWWeatherItemTests.m; sourceTree = "<group>"; };
+		AFF0C2931DCAADE20096E14B /* OWWeatherItem.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OWWeatherItem.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 		AF3216901DCA921700A447E3 /* OpenWeatherTests */ = {
 			isa = PBXGroup;
 			children = (
+				AFF0C28E1DCAACBE0096E14B /* ModelsTests */,
 				AFF0C28B1DCA9EB20096E14B /* WebServiceTests */,
 				AF3216911DCA921700A447E3 /* OpenWeatherTests.m */,
 				AF3216931DCA921700A447E3 /* Info.plist */,
@@ -159,6 +164,15 @@
 				AFF0C28C1DCA9EE40096E14B /* OWWeatherServiceTests.m */,
 			);
 			name = WebServiceTests;
+			sourceTree = "<group>";
+		};
+		AFF0C28E1DCAACBE0096E14B /* ModelsTests */ = {
+			isa = PBXGroup;
+			children = (
+				AFF0C2931DCAADE20096E14B /* OWWeatherItem.json */,
+				AFF0C28F1DCAACDB0096E14B /* OWWeatherItemTests.m */,
+			);
+			name = ModelsTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +267,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFF0C2941DCAADE20096E14B /* OWWeatherItem.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +293,7 @@
 			files = (
 				AFF0C28D1DCA9EE40096E14B /* OWWeatherServiceTests.m in Sources */,
 				AF3216921DCA921700A447E3 /* OpenWeatherTests.m in Sources */,
+				AFF0C2901DCAACDB0096E14B /* OWWeatherItemTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

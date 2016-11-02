@@ -16,4 +16,7 @@
 
 - (instancetype __nonnull)initWithDictionary:(NSDictionary * __nullable)paramDictionary NS_DESIGNATED_INITIALIZER;
 
+-(NSString *)readableWeatherDate;
+-(NSString *)readableWeatherTime;
+
 @end

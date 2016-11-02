@@ -29,7 +29,7 @@
     [OWWeatherService getFiveDaysLondonWeatherWithCompletionHandler:^(NSArray *weatherItems, NSError *error) {
         XCTAssertNil(error, @"there should not be an error");
         XCTAssertNotNil(weatherItems, @"weather items should not be nil");
-        XCTAssertTrue(weatherItems.count > 0, @"there should be some programs");
+        XCTAssertTrue(weatherItems.count == 40, @"there should be 40 weather items");
         
         [expectation fulfill];
     }];
