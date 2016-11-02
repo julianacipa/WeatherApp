@@ -11,7 +11,6 @@
 		AF3216791DCA921700A447E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3216781DCA921700A447E3 /* AppDelegate.m */; };
 		AF32167C1DCA921700A447E3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF32167B1DCA921700A447E3 /* ViewController.m */; };
 		AF32167F1DCA921700A447E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF32167D1DCA921700A447E3 /* Main.storyboard */; };
-		AF3216821DCA921700A447E3 /* OpenWeather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF3216801DCA921700A447E3 /* OpenWeather.xcdatamodeld */; };
 		AF3216841DCA921700A447E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF3216831DCA921700A447E3 /* Assets.xcassets */; };
 		AF3216871DCA921700A447E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF3216851DCA921700A447E3 /* LaunchScreen.storyboard */; };
 		AF3216921DCA921700A447E3 /* OpenWeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3216911DCA921700A447E3 /* OpenWeatherTests.m */; };
@@ -39,7 +38,6 @@
 		AF32167A1DCA921700A447E3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		AF32167B1DCA921700A447E3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		AF32167E1DCA921700A447E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AF3216811DCA921700A447E3 /* OpenWeather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OpenWeather.xcdatamodel; sourceTree = "<group>"; };
 		AF3216831DCA921700A447E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF3216861DCA921700A447E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF3216881DCA921700A447E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,7 +101,6 @@
 				AF3216831DCA921700A447E3 /* Assets.xcassets */,
 				AF3216851DCA921700A447E3 /* LaunchScreen.storyboard */,
 				AF3216881DCA921700A447E3 /* Info.plist */,
-				AF3216801DCA921700A447E3 /* OpenWeather.xcdatamodeld */,
 				AF3216741DCA921700A447E3 /* Supporting Files */,
 			);
 			path = OpenWeather;
@@ -270,7 +267,6 @@
 				AF32167C1DCA921700A447E3 /* ViewController.m in Sources */,
 				AF3216A91DCA96E900A447E3 /* OWWeatherItem.m in Sources */,
 				AF3216791DCA921700A447E3 /* AppDelegate.m in Sources */,
-				AF3216821DCA921700A447E3 /* OpenWeather.xcdatamodeld in Sources */,
 				AF3216A31DCA939700A447E3 /* OWWebServiceRequest.m in Sources */,
 				AF3216761DCA921700A447E3 /* main.m in Sources */,
 			);
@@ -482,19 +478,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		AF3216801DCA921700A447E3 /* OpenWeather.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				AF3216811DCA921700A447E3 /* OpenWeather.xcdatamodel */,
-			);
-			currentVersion = AF3216811DCA921700A447E3 /* OpenWeather.xcdatamodel */;
-			path = OpenWeather.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = AF3216691DCA921700A447E3 /* Project object */;
 }
