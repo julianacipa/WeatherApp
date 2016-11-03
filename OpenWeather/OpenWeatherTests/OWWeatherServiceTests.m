@@ -26,10 +26,10 @@
 - (void)testGetLondonWeatherItem {
     XCTestExpectation *expectation = [self expectationWithDescription:@"Test London Weather Items"];
     
-    [OWWeatherService getFiveDaysLondonWeatherWithCompletionHandler:^(NSArray *weatherItems, NSError *error) {
+    [OWWeatherService getFiveDaysLondonWeatherWithCompletionHandler:^(NSDictionary *weatherItems, NSError *error) {
         XCTAssertNil(error, @"there should not be an error");
         XCTAssertNotNil(weatherItems, @"weather items should not be nil");
-        XCTAssertTrue(weatherItems.count == 40, @"there should be 40 weather items");
+        XCTAssertTrue(weatherItems.allKeys.count == 5, @"there should be 5 days of weather items");
         
         [expectation fulfill];
     }];

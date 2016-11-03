@@ -12,24 +12,32 @@
 
 @implementation OWWeatherService
 
-+ (void)getFiveDaysLondonWeatherWithCompletionHandler:(void (^)(NSArray *, NSError *))handler  {
-    [OWWebServiceRequest startGetRequestWithCityId:@"2643743"
-                                           handler:^(NSDictionary *response, NSError *error) {
-                                               NSDictionary *allWeatherItemsDict = response[@"list"];
-                                               NSMutableArray *weatherItems = [NSMutableArray array];
-                                               
-                                               for(NSDictionary *weatherItemDict in allWeatherItemsDict) {
-                                                   OWWeatherItem *weatherItem = [[OWWeatherItem alloc] initWithDictionary:weatherItemDict];
-                                                   
-                                                   if(weatherItem) {
-                                                       [weatherItems addObject:weatherItem];
-                                                   }
-                                               }
-                                               
-                                               if (handler) {
-                                                   handler([weatherItems copy], error);
-                                               }
-                                         }];
++ (void)getFiveDaysLondonWeatherWithCompletionHandler:(void (^)(NSDictionary *, NSError *))handler  {
+    [OWWebServiceRequest startGetRequestWithCityId:@"2643743" handler:^(NSDictionary *response, NSError *error) {
+        NSDictionary *allWeatherItemsDict = response[@"list"];
+        NSMutableArray *weatherItems = [NSMutableArray array];
+        NSMutableDictionary<NSString *, NSMutableArray *> *fiveDaysWeatherItems = [NSMutableDictionary dictionaryWithCapacity:5];
+       
+        for(NSDictionary *weatherItemDict in allWeatherItemsDict) {
+            OWWeatherItem *weatherItem = [[OWWeatherItem alloc] initWithDictionary:weatherItemDict];
+           
+            if(weatherItem) {
+                NSString *weatherDate = [weatherItem readableWeatherDate];
+                
+                if (![fiveDaysWeatherItems valueForKey:weatherDate]) {
+                    [fiveDaysWeatherItems setValue:[@[weatherItem] mutableCopy] forKey:weatherDate];
+                } else {
+                    [[fiveDaysWeatherItems valueForKey:weatherDate] addObject:weatherItem];
+                }
+                
+                [weatherItems addObject:weatherItem];
+            }
+        }
+       
+        if (handler) {
+            handler([fiveDaysWeatherItems copy], error);
+        }
+    }];
 }
 
 @end

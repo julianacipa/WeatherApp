@@ -10,6 +10,6 @@
 
 @interface OWWeatherService : NSObject
 
-+ (void)getFiveDaysLondonWeatherWithCompletionHandler:(void (^)(NSArray *, NSError *))handler;
++ (void)getFiveDaysLondonWeatherWithCompletionHandler:(void (^)(NSDictionary *, NSError *))handler;
 
 @end
