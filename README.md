@@ -4,13 +4,13 @@
 To run the app:
 
 1. Open the file OpenWeather/OpenWeather.xcodeproj with Xcode
-2. Select OpenWeather target and a iPhone simulator of your choice
+2. Select OpenWeather target and an iPhone simulator of your choice
 3. Product/Run or cmd+R
 
 To run the tests
 
 1. Open the file OpenWeather/OpenWeather.xcodeproj with Xcode
-2. Select OpenWeather target and a iPhone simulator of your choice
+2. Select OpenWeather target and an iPhone simulator of your choice
 3. Product/Test or cmd+U
 
 Remaining task:
