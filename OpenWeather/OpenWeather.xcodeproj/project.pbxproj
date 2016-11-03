@@ -20,6 +20,7 @@
 		AFF0C28D1DCA9EE40096E14B /* OWWeatherServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF0C28C1DCA9EE40096E14B /* OWWeatherServiceTests.m */; };
 		AFF0C2901DCAACDB0096E14B /* OWWeatherItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF0C28F1DCAACDB0096E14B /* OWWeatherItemTests.m */; };
 		AFF0C2941DCAADE20096E14B /* OWWeatherItem.json in Resources */ = {isa = PBXBuildFile; fileRef = AFF0C2931DCAADE20096E14B /* OWWeatherItem.json */; };
+		AFF0C2971DCAC0900096E14B /* OWDailyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF0C2961DCAC0900096E14B /* OWDailyTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		AFF0C28C1DCA9EE40096E14B /* OWWeatherServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWWeatherServiceTests.m; sourceTree = "<group>"; };
 		AFF0C28F1DCAACDB0096E14B /* OWWeatherItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWWeatherItemTests.m; sourceTree = "<group>"; };
 		AFF0C2931DCAADE20096E14B /* OWWeatherItem.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OWWeatherItem.json; sourceTree = "<group>"; };
+		AFF0C2951DCAC0900096E14B /* OWDailyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWDailyTableViewCell.h; sourceTree = "<group>"; };
+		AFF0C2961DCAC0900096E14B /* OWDailyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWDailyTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +157,8 @@
 			children = (
 				AF32167A1DCA921700A447E3 /* ViewController.h */,
 				AF32167B1DCA921700A447E3 /* ViewController.m */,
+				AFF0C2951DCAC0900096E14B /* OWDailyTableViewCell.h */,
+				AFF0C2961DCAC0900096E14B /* OWDailyTableViewCell.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 				AF3216A61DCA954500A447E3 /* OWWeatherService.m in Sources */,
 				AF32167C1DCA921700A447E3 /* ViewController.m in Sources */,
 				AF3216A91DCA96E900A447E3 /* OWWeatherItem.m in Sources */,
+				AFF0C2971DCAC0900096E14B /* OWDailyTableViewCell.m in Sources */,
 				AF3216791DCA921700A447E3 /* AppDelegate.m in Sources */,
 				AF3216A31DCA939700A447E3 /* OWWebServiceRequest.m in Sources */,
 				AF3216761DCA921700A447E3 /* main.m in Sources */,
