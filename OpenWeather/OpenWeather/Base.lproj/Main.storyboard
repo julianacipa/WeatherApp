@@ -36,29 +36,61 @@
                                             <frame key="frameInset" width="375" height="137"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="J1D-A8-PxO">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="J1D-A8-PxO" customClass="OWDayCollectionView">
                                                     <frame key="frameInset" minX="8" minY="4" width="359" height="128"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zMX-t6-sPP">
-                                                        <size key="itemSize" width="50" height="50"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zMX-t6-sPP">
+                                                        <size key="itemSize" width="116" height="130"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="TnY-bR-v9G">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="weatherItemCell" id="TnY-bR-v9G" customClass="OWDayCollectionViewCell">
+                                                            <rect key="frame" x="0.0" y="-1" width="116" height="130"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="116" height="130"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="6K6-Ft-s7N">
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="50" id="DiJ-KD-oei"/>
+                                                                            <constraint firstAttribute="height" constant="50" id="eu9-Jc-W8H"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAN-RD-2a2">
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
                                                             </view>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstItem="dAN-RD-2a2" firstAttribute="centerX" secondItem="TnY-bR-v9G" secondAttribute="centerX" id="16o-0d-zXq"/>
+                                                                <constraint firstItem="6K6-Ft-s7N" firstAttribute="leading" secondItem="TnY-bR-v9G" secondAttribute="leadingMargin" constant="25" id="ARW-CA-QXe"/>
+                                                                <constraint firstItem="6K6-Ft-s7N" firstAttribute="top" secondItem="TnY-bR-v9G" secondAttribute="topMargin" id="GYG-mJ-DsV"/>
+                                                                <constraint firstAttribute="bottomMargin" secondItem="dAN-RD-2a2" secondAttribute="bottom" id="PWJ-cQ-NTe"/>
+                                                                <constraint firstAttribute="trailingMargin" secondItem="6K6-Ft-s7N" secondAttribute="trailing" constant="25" id="q7H-1d-dkv"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outlet property="timeLabel" destination="dAN-RD-2a2" id="WZS-ab-8Yn"/>
+                                                                <outlet property="weatherIcon" destination="6K6-Ft-s7N" id="5uP-0j-hBn"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="BYZ-38-t0r" id="rGz-ol-HPe"/>
+                                                        <outlet property="delegate" destination="BYZ-38-t0r" id="nmD-SW-52J"/>
+                                                    </connections>
                                                 </collectionView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dayCollectionView" destination="J1D-A8-PxO" id="6fs-Af-YfC"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -85,4 +117,7 @@
             <point key="canvasLocation" x="140" y="91.304347826086968"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="placeholder" width="170" height="106"/>
+    </resources>
 </document>

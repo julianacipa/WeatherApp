@@ -9,8 +9,14 @@
 #import "ViewController.h"
 #import "OWWeatherService.h"
 #import "OWDailyTableViewCell.h"
+#import "OWDayCollectionView.h"
+#import "OWDayCollectionViewCell.h"
+#import "OWWeatherItem.h"
 
-@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
+static NSString *const kThumbnaleEndPoint = @"http://openweathermap.org/img/w/";
+static NSString *const kWeatherItemCollectionViewCell = @"weatherItemCell";
+
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -49,6 +55,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     OWDailyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"dayWeatherCell" forIndexPath:indexPath];
     
+    cell.dayCollectionView.indexPath = indexPath;
+    [cell.dayCollectionView reloadData];
+    
     return cell;
 }
 
@@ -67,6 +76,48 @@
     header.textLabel.textColor = [UIColor whiteColor];
     CGRect headerFrame = header.frame;
     header.textLabel.frame = headerFrame;
+}
+
+#pragma mark - UICollectionViewDataSource Methods
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView
+    numberOfItemsInSection:(NSInteger)section {
+    NSInteger dayWeatherIndex = [(OWDayCollectionView *)collectionView indexPath].section;
+    NSArray *weatherItems = self.weatherData.allValues[dayWeatherIndex];
+    
+    return weatherItems.count;
+}
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                 cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    OWDayCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kWeatherItemCollectionViewCell
+                                                                                forIndexPath:indexPath];
+    NSInteger collectionViewSection = [(OWDayCollectionView *)collectionView indexPath].section;
+    
+    cell.collectionViewSection = collectionViewSection;
+    cell.indexPath = indexPath;
+    
+    [cell configureWithDefaultValues];
+    
+    NSArray *allWeatherItems = self.weatherData.allValues[collectionViewSection];
+    OWWeatherItem *weatherItem = allWeatherItems[indexPath.row];
+    
+    NSString *completeUrlString = [NSString stringWithFormat:@"%@%@.png", kThumbnaleEndPoint, weatherItem.iconName];
+    NSURL *imageURL = [NSURL URLWithString:completeUrlString];
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+    dispatch_async(queue, ^{
+        NSData *data = [NSData dataWithContentsOfURL:imageURL];
+        UIImage *image = [UIImage imageWithData:data];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (cell.indexPath.row == indexPath.row && cell.collectionViewSection == [(OWDayCollectionView *)collectionView indexPath].section) {
+                cell.weatherIcon.image = image;
+                cell.timeLabel.text = [weatherItem readableWeatherTime];
+            }
+        });
+    });
+    
+    return cell;
 }
 
 #pragma mark - Settings

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OWDayCollectionView.h"
 
 @interface OWDailyTableViewCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet OWDayCollectionView *dayCollectionView;
 
 @end

@@ -21,6 +21,8 @@
 		AFF0C2901DCAACDB0096E14B /* OWWeatherItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF0C28F1DCAACDB0096E14B /* OWWeatherItemTests.m */; };
 		AFF0C2941DCAADE20096E14B /* OWWeatherItem.json in Resources */ = {isa = PBXBuildFile; fileRef = AFF0C2931DCAADE20096E14B /* OWWeatherItem.json */; };
 		AFF0C2971DCAC0900096E14B /* OWDailyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF0C2961DCAC0900096E14B /* OWDailyTableViewCell.m */; };
+		AFF0C29A1DCAC3A30096E14B /* OWDayCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF0C2991DCAC3A30096E14B /* OWDayCollectionView.m */; };
+		AFF0C29D1DCAC3C60096E14B /* OWDayCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF0C29C1DCAC3C60096E14B /* OWDayCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,10 @@
 		AFF0C2931DCAADE20096E14B /* OWWeatherItem.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OWWeatherItem.json; sourceTree = "<group>"; };
 		AFF0C2951DCAC0900096E14B /* OWDailyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWDailyTableViewCell.h; sourceTree = "<group>"; };
 		AFF0C2961DCAC0900096E14B /* OWDailyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWDailyTableViewCell.m; sourceTree = "<group>"; };
+		AFF0C2981DCAC3A30096E14B /* OWDayCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWDayCollectionView.h; sourceTree = "<group>"; };
+		AFF0C2991DCAC3A30096E14B /* OWDayCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWDayCollectionView.m; sourceTree = "<group>"; };
+		AFF0C29B1DCAC3C60096E14B /* OWDayCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWDayCollectionViewCell.h; sourceTree = "<group>"; };
+		AFF0C29C1DCAC3C60096E14B /* OWDayCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWDayCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +165,10 @@
 				AF32167B1DCA921700A447E3 /* ViewController.m */,
 				AFF0C2951DCAC0900096E14B /* OWDailyTableViewCell.h */,
 				AFF0C2961DCAC0900096E14B /* OWDailyTableViewCell.m */,
+				AFF0C2981DCAC3A30096E14B /* OWDayCollectionView.h */,
+				AFF0C2991DCAC3A30096E14B /* OWDayCollectionView.m */,
+				AFF0C29B1DCAC3C60096E14B /* OWDayCollectionViewCell.h */,
+				AFF0C29C1DCAC3C60096E14B /* OWDayCollectionViewCell.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -283,9 +293,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFF0C29D1DCAC3C60096E14B /* OWDayCollectionViewCell.m in Sources */,
 				AF3216A61DCA954500A447E3 /* OWWeatherService.m in Sources */,
 				AF32167C1DCA921700A447E3 /* ViewController.m in Sources */,
 				AF3216A91DCA96E900A447E3 /* OWWeatherItem.m in Sources */,
+				AFF0C29A1DCAC3A30096E14B /* OWDayCollectionView.m in Sources */,
 				AFF0C2971DCAC0900096E14B /* OWDailyTableViewCell.m in Sources */,
 				AF3216791DCA921700A447E3 /* AppDelegate.m in Sources */,
 				AF3216A31DCA939700A447E3 /* OWWebServiceRequest.m in Sources */,
