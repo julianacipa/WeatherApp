@@ -16,6 +16,8 @@
 static NSString *const kThumbnaleEndPoint = @"http://openweathermap.org/img/w/";
 static NSString *const kWeatherItemCollectionViewCell = @"weatherItemCell";
 
+static CGFloat DegreesToRadians(CGFloat degrees) {return degrees * M_PI / 180;};
+
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -88,6 +90,21 @@ static NSString *const kWeatherItemCollectionViewCell = @"weatherItemCell";
     return weatherItems.count;
 }
 
+- (void) runSpinAnimationOnView:(UIView*)view
+                       duration:(CGFloat)duration
+                        toValue:(CGFloat)toValue
+{
+    CABasicAnimation* rotationAnimation;
+    rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+    rotationAnimation.toValue = [NSNumber numberWithFloat: toValue];
+    rotationAnimation.duration = duration;
+    rotationAnimation.repeatCount = 1.0;
+    rotationAnimation.fillMode = kCAFillModeForwards;
+    rotationAnimation.removedOnCompletion = NO;
+    
+    [view.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+}
+
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                  cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     OWDayCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kWeatherItemCollectionViewCell
@@ -101,6 +118,10 @@ static NSString *const kWeatherItemCollectionViewCell = @"weatherItemCell";
     
     NSArray *allWeatherItems = self.weatherData.allValues[collectionViewSection];
     OWWeatherItem *weatherItem = allWeatherItems[indexPath.row];
+    
+    [self runSpinAnimationOnView:cell.apArrowImage duration:5.0 toValue:DegreesToRadians([weatherItem.windDegree floatValue])];
+    
+    //cell.apArrowImage.transform = CGAffineTransformMakeRotation(DegreesToRadians([weatherItem.windDegree floatValue]));
     
     NSString *completeUrlString = [NSString stringWithFormat:@"%@%@.png", kThumbnaleEndPoint, weatherItem.iconName];
     NSURL *imageURL = [NSURL URLWithString:completeUrlString];
