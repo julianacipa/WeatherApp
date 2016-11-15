@@ -12,6 +12,7 @@
 
 @property (nonnull, copy) NSString *dateText;
 @property (nonnull, copy) NSString *iconName;
+@property (nonnull, strong) NSNumber *windDegree;
 @property (nonnull, strong) NSNumber *temp;
 
 - (instancetype __nonnull)initWithDictionary:(NSDictionary * __nullable)paramDictionary NS_DESIGNATED_INITIALIZER;

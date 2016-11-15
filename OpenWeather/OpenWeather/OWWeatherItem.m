@@ -21,6 +21,7 @@
         _dateText = paramDictionary[@"dt_txt"];
         _iconName = ((NSDictionary *)((NSArray *)paramDictionary[@"weather"]).firstObject)[@"icon"];
         _temp = paramDictionary[@"main"][@"temp"];
+        _windDegree = paramDictionary[@"wind"][@"deg"];
     }
     
     return self;

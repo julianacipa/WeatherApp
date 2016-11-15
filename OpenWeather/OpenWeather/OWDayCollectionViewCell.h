@@ -11,6 +11,7 @@
 @interface OWDayCollectionViewCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *weatherIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *apArrowImage;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @property (nonatomic, assign) NSInteger collectionViewSection;

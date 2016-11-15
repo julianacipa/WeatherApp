@@ -65,17 +65,26 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="up-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="Dth-3i-T2W">
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="32" id="iag-l5-ZSi"/>
+                                                                            <constraint firstAttribute="width" constant="32" id="jPK-vy-ApB"/>
+                                                                        </constraints>
+                                                                    </imageView>
                                                                 </subviews>
                                                             </view>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstItem="dAN-RD-2a2" firstAttribute="centerX" secondItem="TnY-bR-v9G" secondAttribute="centerX" id="16o-0d-zXq"/>
+                                                                <constraint firstItem="Dth-3i-T2W" firstAttribute="top" secondItem="6K6-Ft-s7N" secondAttribute="bottom" constant="5" id="3aa-hF-LrA"/>
                                                                 <constraint firstItem="6K6-Ft-s7N" firstAttribute="leading" secondItem="TnY-bR-v9G" secondAttribute="leadingMargin" constant="25" id="ARW-CA-QXe"/>
                                                                 <constraint firstItem="6K6-Ft-s7N" firstAttribute="top" secondItem="TnY-bR-v9G" secondAttribute="topMargin" id="GYG-mJ-DsV"/>
                                                                 <constraint firstAttribute="bottomMargin" secondItem="dAN-RD-2a2" secondAttribute="bottom" id="PWJ-cQ-NTe"/>
                                                                 <constraint firstAttribute="trailingMargin" secondItem="6K6-Ft-s7N" secondAttribute="trailing" constant="25" id="q7H-1d-dkv"/>
+                                                                <constraint firstItem="Dth-3i-T2W" firstAttribute="centerX" secondItem="6K6-Ft-s7N" secondAttribute="centerX" id="vRE-fY-IPy"/>
                                                             </constraints>
                                                             <connections>
+                                                                <outlet property="apArrowImage" destination="Dth-3i-T2W" id="zzA-3H-SCa"/>
                                                                 <outlet property="timeLabel" destination="dAN-RD-2a2" id="WZS-ab-8Yn"/>
                                                                 <outlet property="weatherIcon" destination="6K6-Ft-s7N" id="5uP-0j-hBn"/>
                                                             </connections>
@@ -119,5 +128,6 @@
     </scenes>
     <resources>
         <image name="placeholder" width="170" height="106"/>
+        <image name="up-arrow" width="8" height="8"/>
     </resources>
 </document>
